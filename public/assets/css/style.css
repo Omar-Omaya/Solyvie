@@ -1,0 +1,156 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #0f0f0f !important;
+  }
+
+  .full-height {
+    height: calc(100vh - 60px); /* Adjust if header is taller */
+  }
+
+  .h-61 {
+    height: 61% !important;
+  }
+
+  .card-custom {
+    background-color: #1e1e1e;
+    color: white;
+    border-radius: 15px;
+    padding: 1rem;
+    height: 100%;
+  }
+
+  .btn-custom {
+    background-color: #8bc34a;
+    border: none;
+    color: white;
+  }
+
+  .header-bar {
+    height: 60px;
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+:root {
+    --color-primary: #191919;
+    --color-secondary: #333333;
+    --color-tertiary: #3EBDAA;
+    --color-quaternary: #4D4D4DFF;
+  }
+
+.p-color{
+  background-color: var(--color-primary);
+}
+
+.s-color{
+    background-color: var(--color-secondary);
+}  
+
+.t-color{
+    background-color: var(--color-tertiary);
+  }
+  .q-color{
+    background-color: var(--color-quaternary);
+  }
+
+  .hover-overlay {
+    transition: background-color 0.3s ease-in-out;
+  }
+  .hover-overlay:hover {
+    background-color: #2a2a2a;
+  }
+
+  .carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+    border: 0;
+  }
+  .carousel-indicators .active {
+    background-color: var(--color-secondary);
+  }
+
+  .mh-65{
+    max-height: 60vh;
+  }
+
+  .gallery-container {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 1000px;
+  }
+
+  .main-image {
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: background-image 0.3s ease;
+    cursor: pointer;
+  }
+
+  .thumbnails {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .thumbnail {
+    min-width: 100px;
+    height: 80px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    cursor: pointer;
+    flex-shrink: 0; 
+  }
+  .thumbnails::-webkit-scrollbar {
+    height: 6px;
+  }
+  .thumbnails::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .thumbnails::-webkit-scrollbar-thumb {
+    background: var(--color-secondary);
+    border-radius: 10px;
+  }
+
+
+
+  .thumbnail:hover {
+    transform: scale(1.1);
+  }
+
+  #presentBtn {
+    margin-top: 10px;
+    background-color: #444;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  #presentBtn:hover {
+    background-color: #666;
+  }
+
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    
+  }
+

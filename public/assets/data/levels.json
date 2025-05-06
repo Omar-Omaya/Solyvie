@@ -1,0 +1,24 @@
+{
+    "storeItems": [
+      {
+        "id": 1,
+        "name": "Vista",
+        "image": "./assets/images/catalogue/1A/1.jpg",
+        "link": "./building.html"
+      },
+      {
+        "id": 2,
+        "name": "Delta",
+        "image": "./assets/images/catalogue/1A/2.jpg",
+        "link": "./building.html"
+      },
+      {
+        "id": 3,
+        "name": "Mountain",
+        "image": "./assets/images/catalogue/1A/3.jpg",
+        "link": "./building.html"
+      }
+
+    ]
+  }
+  
