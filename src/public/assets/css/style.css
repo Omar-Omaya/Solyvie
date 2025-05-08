@@ -25,6 +25,7 @@ html, body {
     border: none;
     color: white;
   }
+  
 
   .header-bar {
     height: 60px;
@@ -153,4 +154,73 @@ html, body {
     cursor: pointer;
     
   }
+  .menu-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.menu-item {
+    padding: 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover and active */
+}
+.menu-item:hover {
+    background-color: #f0f0f0; /* Light gray on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    border-radius: 5px;
+}
+.menu-item:first-child {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    /* color: #fff; */
+}
+.menu-item:last-child {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+/* Active state styling */
+.menu-item.active {
+    background-color: #333; /* Bootstrap primary blue for active state */
+    color: #fff;
+    transform: scale(1.05); /* Match hover scale for consistency */
+    border-radius: 5px;
+}
+/* Ensure active state takes precedence over hover for first item */
+.menu-item:first-child.active {
+    background-color: #333; /* Slightly darker blue for active state */
+}
+/* Prevent hover from overriding active state */
+.menu-item.active:hover {
+  background-color: #333; /* Darker top item */ /* Slightly darker blue on hover when active */
+}
+
+
+.nav-bar {
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.nav-item {
+  font-size: 1.5em;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.nav-item:hover {
+  color: #007bff; /* Bootstrap blue on hover */
+  transform: scale(1.2); /* Slightly enlarge on hover */
+}
+.nav-item.active {
+  color: #007bff; /* Bootstrap blue for active state */
+  transform: scale(1.2); /* Match hover scale */
+}
 
