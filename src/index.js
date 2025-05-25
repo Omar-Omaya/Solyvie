@@ -25,24 +25,44 @@ app.get('/api/load-excel', (req, res) => {
     res.sendFile(filePath);
 });
 
+app.get('/api/files', (req, res) => {
+    const dataDir = path.join(__dirname, 'public', 'data');
+    fs.readdir(dataDir, (err, files) => {
+        if (err) {
+            return res.status(500).json({ success: false, error: 'Unable to read directory' });
+        }
+
+        const fileDetails = files.map(file => {
+            const filePath = path.join(dataDir, file);
+            const stats = fs.statSync(filePath);
+            return {
+                name: file,
+                date: stats.mtime
+            };
+        });
+
+        res.json({ success: true, files: fileDetails });
+    });
+});
 
 
-app.post('/api/save-csv', (req, res) => {
-    const csv = req.body.csv;
-    if (!csv) {
-        return res.status(400).json({ success: false, error: 'No CSV data provided' });
+
+app.post('/api/save-xlsx', (req, res) => {
+    const xlsxData = req.body.xlsxData;
+    if (!xlsxData) {
+        return res.status(400).json({ success: false, error: 'No XLSX data provided' });
     }
 
-    const csvPath = path.join(__dirname, 'public', 'assets', 'data', 'SolyVieDatabase.csv');
+    const xlsxPath = path.join(__dirname, 'public', 'data', 'Solevie.xlsx');
     try {
-        if (fs.existsSync(csvPath)) {
-            fs.copyFileSync(csvPath, path.join(__dirname, 'public', 'assets', 'data', `backup_${Date.now()}.csv`));
+        if (fs.existsSync(xlsxPath)) {
+            fs.copyFileSync(xlsxPath, path.join(__dirname, 'public', 'data', `backup_${Date.now()}.xlsx`));
         }
-        fs.writeFileSync(csvPath, csv, 'utf8');
+        fs.writeFileSync(xlsxPath, xlsxData, 'utf8');
         res.json({ success: true });
     } catch (error) {
-        console.error('Error saving CSV:', error);
-        res.status(500).json({ success: false, error: 'Failed to save CSV' });
+        console.error('Error saving XLSX:', error);
+        res.status(500).json({ success: false, error: 'Failed to save XLSX' });
     }
 });
 
