@@ -11,12 +11,6 @@ app.use(cors());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.static(path.join(__dirname, 'public'))); 
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-
-
 app.post('/api/save-csv', (req, res) => {
     const csv = req.body.csv;
     if (!csv) {
@@ -34,6 +28,10 @@ app.post('/api/save-csv', (req, res) => {
         console.error('Error saving CSV:', error);
         res.status(500).json({ success: false, error: 'Failed to save CSV' });
     }
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(3001, () => {
